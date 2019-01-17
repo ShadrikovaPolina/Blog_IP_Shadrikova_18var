@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Просто блог</title>
+    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Content/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="~/Post/NewBlog"><img src="~/images/logo.jpg" title="" /></a>
+            </div>
+            <!---start-top-nav---->
+            <div class="top-menu">
+                <span class="menu"> </span>
+                <ul>
+                    <li class="active">Блог</li>
+                    <li><a href="~/Category/Categories">Управление категориями</a></li>
+                    <li><a href="~/Post/Posts">Управление постами</a></li>
+                    <li><a href="~/Account/Login">Войти</a></li>
+                    <li><a href="~/Account/Register">Регистрация</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <script>
+                $("span.menu").click(function () {
+                    $(".top-menu ul").slideToggle("slow", function () {
+                    });
+                });
+            </script>
+            <!---//End-top-nav---->
+        </div>
+    </div>
+    <!--/header-->
+    <div class="about-content">
+        <div class="container">
+            <h2>О блоге</h2>
+            <div class="about-section">
+                <div class="about-grid">
+                    <h3>Для чего создан блог?</h3>
+                    <p>
+                        Мне скучно.
+                    </p>
+                </div>
+                <div class="about-grid2">
+                    <h3>Кто читает этот блог?</h3>
+                    <p>
+                        Избранные.
+                    </p>
+                </div>
+                <div class="who-iam">
+                    <h3>Кто я?</h3>
+                    <div class="man-info">
+                        <p>Я это я. </p>
+                        <h4>Some facts about me.</h4>
+                        <li>Да да.</li>
+                        <li>Именно так.</li>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+</body>
+</html>

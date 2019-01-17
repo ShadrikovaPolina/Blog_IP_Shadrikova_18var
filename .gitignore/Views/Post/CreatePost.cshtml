@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "CreatePost";
+}
+@model Blog.Models.Post
+
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Просто блог</title>
+    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Content/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="~/Post/NewBlog"><img src="~/images/logo.jpg" title="" /></a>
+            </div>
+            <!---start-top-nav---->
+            <div class="top-menu">
+                <span class="menu"> </span>
+                <ul>
+                    <li><a href="~/Post/NewBlog">Блог</a></li>
+                    <li><a href="~/Category/Categories">Управление категориями</a></li>
+                    <li><a href="~/Post/Posts">Управление постами</a></li>
+                    <li><a href="~/Account/Login">Войти</a></li>
+                    <li><a href="~/Account/Register">Регистрация</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <script>
+                $("span.menu").click(function () {
+                    $(".top-menu ul").slideToggle("slow", function () {
+                    });
+                });
+            </script>
+            <!---//End-top-nav---->
+        </div>
+    </div>
+    <!--/header-->
+    <div class="content">
+        <div class="container">
+            <div class="content-grids">
+                <div class="col-md-8 content-main">
+                    <div class="content-grid">
+                        <div class="content-grid-info">
+                            <div class="post-info">
+
+                                <blockquote>
+                                    <p>
+                                        <h2>Добавить запись</h2>
+                                    </p>
+                                </blockquote>
+                                @using (Html.BeginForm())
+                                {
+
+                                    @Html.LabelFor(model => model.Name, "Заголовок")
+                                    <br />
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { onchange = "checkForm()" } })
+                                    <br /><br />
+                                    @Html.LabelFor(model => model.Date, "Дата")
+                                    <br />
+                                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { onchange = "checkForm()" } })
+                                    <br /><br />
+                                    @Html.LabelFor(model => model.Content, "Содержание")
+                                    <br />
+                                    @Html.EditorFor(model => model.Content, new { htmlAttributes = new { onchange = "checkForm()" } })
+                                    <br /><br />
+                                    @Html.LabelFor(model => model.CategoryId, "Категория")
+                                    <br />
+                                    @Html.DropDownListFor(model => model.CategoryId, ViewBag.Posts as SelectList)
+                                    <br /><br />
+                                    <input id="submitButton" type="submit" value="Добавить" disabled />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!---->
+</body>
+</html>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
