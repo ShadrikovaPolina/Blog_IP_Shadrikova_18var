@@ -63,17 +63,27 @@
                     <div class="content-grid">
                         <div class="content-grid-info">
                             <div class="post-info">
-
+                                <div id="results"></div>
                             </div>
                         </div>
-
+                        @Html.Partial("~/Views/Post/PP.cshtml")
                     </div>
                 </div>
                 <div class="col-md-4 content-right">
                     <div class="categories">
                         <h3>Категории</h3>
                         <ul>
-
+                            @foreach (var cat in ViewBag.Categories)
+                            {
+                                string s = @cat.Name;
+                                <ul>
+                                    <li #sec="">
+                                        @Ajax.ActionLink(s, "PostSearch", new { searchingPost = @cat.Id }, new AjaxOptions { UpdateTargetId = "results", HttpMethod = "Post" })
+                                    </li>
+                                </ul>
+                            }
+                            @Scripts.Render("~/scripts/jquery-3.3.1.min.js")
+                            @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
                         </ul>
                     </div>
                     <div class="clearfix"></div>

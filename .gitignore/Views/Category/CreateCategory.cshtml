@@ -62,7 +62,23 @@
                     <div class="content-grid">
                         <div class="content-grid-info">
                             <div class="post-info">
+                                <script type="text/javascript">
+                                    function checkForm() {
+                                        var Name = $('#Name').val();
+                                        var submitButton = $('#submitButton');
 
+                                        if (Name == "") {
+
+                                            submitButton.prop('disabled', true);
+                                        }
+                                        else {
+                                            submitButton.prop('disabled', false);
+                                        }
+                                    }</script>
+
+                                @Scripts.Render("~/scripts/jquery-3.3.1.min.js")
+                                @Scripts.Render("~/scripts/jquery.validate.min.js")
+                                @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
                                 <blockquote>
                                     <p>
                                         <h2>Добавить запись</h2>

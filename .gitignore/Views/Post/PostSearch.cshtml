@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Blog.Models.Post>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+   <h2>@item.Name</h2>
+   @item.Date
+   <p>@item.Content</p>
+}
+
